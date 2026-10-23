@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#17152d">
+  <title>Ведьмочка и лунная библиотека</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">МИСТИЧЕСКОЕ ПРИКЛЮЧЕНИЕ</p>
+        <h1>Ведьмочка и лунная библиотека</h1>
+        <p class="subtitle">Собери потерянные книги и найди выход из зачарованного леса.</p>
+      </div>
+      <div class="top-stats" aria-live="polite">
+        <span>Книги и коты <b id="score">0 / 3</b></span>
+        <span>Здоровье <b id="health">♥ ♥ ♥</b></span>
+        <span>Рекорд <b id="best">0</b></span>
+      </div>
+    </header>
+
+    <section class="game-shell">
+      <div class="canvas-wrap">
+        <canvas id="game" width="960" height="540" aria-label="Игровое поле: ведьма прыгает по платформам"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <p class="eyebrow" id="overlay-kicker">ТВОЁ ПРИКЛЮЧЕНИЕ НАЧИНАЕТСЯ</p>
+            <h2 id="overlay-title">Лунная библиотека</h2>
+            <p id="overlay-text">Собери все три предмета и доберись до светящегося портала. Книги и коты безопасны, а призраки отнимают здоровье.</p>
+            <button id="start-btn" class="primary-btn">Начать игру</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls-row">
+        <div class="desktop-hint"><kbd>←</kbd> <kbd>→</kbd> или <kbd>A</kbd> <kbd>D</kbd> — движение <span>·</span> <kbd>Space</kbd>/<kbd>W</kbd> — прыжок <span>·</span> <kbd>Shift</kbd> — полёт <span>·</span> <kbd>Esc</kbd> — пауза</div>
+        <div class="game-buttons">
+          <button id="pause-btn" class="secondary-btn" disabled>Пауза</button>
+          <button id="restart-btn" class="secondary-btn">Заново</button>
+        </div>
+      </div>
+
+      <div class="mobile-controls" aria-label="Сенсорное управление">
+        <div class="move-controls">
+          <button class="touch-btn" data-key="left" aria-label="Влево">←</button>
+          <button class="touch-btn" data-key="right" aria-label="Вправо">→</button>
+        </div>
+        <div class="move-controls">
+          <button class="touch-btn magic-btn" data-key="fly" aria-label="Лететь">✦ Полёт</button>
+          <button class="touch-btn jump-btn" data-key="jump" aria-label="Прыжок">↑ Прыжок</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card"><span class="symbol safe">✦</span><div><h3>Книги и коты</h3><p>Собирай их для счёта. Они не наносят урон.</p></div></article>
+      <article class="info-card"><span class="symbol danger">☾</span><div><h3>Призраки</h3><p>Касание призрака отнимает одно сердце. Избегай их!</p></div></article>
+      <article class="info-card"><span class="symbol goal">↗</span><div><h3>Портал</h3><p>Собери 3 предмета и коснись портала у финиша.</p></div></article>
+    </section>
+    <footer>Игра работает в браузере на JavaScript и Canvas. Прогресс-рекорд сохраняется в браузере.</footer>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
